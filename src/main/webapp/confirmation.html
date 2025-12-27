@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Confirmed | City Care Hospital</title>
+
+<style>
+:root{
+    --blue:#0d6efd;
+    --green:#20c997;
+    --dark:#1f2933;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#e3f2fd,#f1fdf6);
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(to right,var(--blue),var(--green));
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+.header h1{
+    margin:0;
+    font-size:32px;
+}
+.header p{
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:700px;
+    margin:50px auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 25px 60px rgba(0,0,0,0.18);
+}
+
+/* SUCCESS ICON */
+.success{
+    font-size:60px;
+    color:#20c997;
+}
+
+/* TEXT */
+h2{
+    color:var(--dark);
+    margin-top:15px;
+}
+p{
+    color:#555;
+    font-size:16px;
+}
+
+/* TOKEN */
+.token{
+    margin:25px auto;
+    padding:20px;
+    border-radius:14px;
+    background:#f8f9fa;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* BUTTONS */
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 25px;
+    border-radius:30px;
+    background:linear-gradient(to right,var(--blue),var(--green));
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+.btn:hover{
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:18px;
+    font-size:13px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>🏥 City Care Hospital</h1>
+    <p>Smart Appointment & OPD Management</p>
+</div>
+
+<!-- CONFIRMATION CARD -->
+<div class="container">
+    <div class="card">
+
+        <div class="success">✅</div>
+
+        <h2>Appointment Confirmed</h2>
+
+        <p>
+            Thank you for choosing City Care Hospital.<br>
+            Your appointment has been successfully booked.
+        </p>
+
+        <div class="token">
+            🎫 Token Number: <span id="token" style="color:#0d6efd;"></span>
+        </div>
+
+        <p>
+            Please arrive 10 minutes early and keep this token for reference.
+        </p>
+
+        <a href="appointment.html" class="btn">Book Another Appointment</a>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2025 City Care Hospital | Caring Beyond Treatment
+</div>
+
+<!-- SCRIPT TO READ TOKEN -->
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    if (token) {
+        document.getElementById("token").innerText = token;
+    } else {
+        document.getElementById("token").innerText = "N/A";
+    }
+</script>
+
+</body>
+</html>
